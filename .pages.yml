@@ -49,10 +49,7 @@ content:
     type: file
     path: content/servicos.json
     format: json
-    list:
-      collapsible:
-        collapsed: true
-        summary: "{nome}"
+    list: true
     fields:
       - name: slug
         label: Endereço na página
@@ -89,10 +86,7 @@ content:
     type: file
     path: content/destinos.json
     format: json
-    list:
-      collapsible:
-        collapsed: true
-        summary: "{nome}"
+    list: true
     fields:
       - name: nome
         label: Nome do destino
@@ -176,10 +170,7 @@ content:
     type: file
     path: content/depoimentos.json
     format: json
-    list:
-      collapsible:
-        collapsed: true
-        summary: "{codigo}: {autor}"
+    list: true
     fields:
       - name: codigo
         label: Código
