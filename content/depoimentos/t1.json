@@ -1,0 +1,15 @@
+{
+  "codigo": "T1",
+  "autor": "Pessoa de Teste A.",
+  "texto": "Relato fictício, só para testar o painel. A viagem foi ótima e tudo deu certo.",
+  "trechos": [
+    {
+      "tema": "confianca",
+      "texto": "tudo deu certo"
+    }
+  ],
+  "destino": "tailandia",
+  "formato": "curadoria",
+  "foto": "assets/img/foto-celular-teste.jpg",
+  "ok_publicacao": true
+}

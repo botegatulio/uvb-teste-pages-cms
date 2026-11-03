@@ -4,7 +4,7 @@
   "regiao": "asia",
   "ordem": 6,
   "status": "mencao",
-  "foto": "fotos/destinos/camboja.webp",
+  "foto": "assets/img/camboja.webp",
   "mapa": {
     "d": "Angkor ao nascer do sol, quando o templo ainda é só seu.",
     "f": [

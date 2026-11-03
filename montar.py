@@ -80,7 +80,7 @@ img{{max-width:100%;height:auto}} article,blockquote{{border-top:1px solid #ccc;
 </body></html>
 '''
     shutil.rmtree(SAIDA, ignore_errors=True)
-    shutil.copytree(os.path.join(RAIZ, 'content', 'fotos'), os.path.join(SAIDA, 'fotos'))
+    shutil.copytree(os.path.join(RAIZ, 'assets'), os.path.join(SAIDA, 'assets'))
     with open(os.path.join(SAIDA, 'index.html'), 'w', encoding='utf-8') as f:
         f.write(pagina)
     print(f'_site/index.html: {len(formatos)} formatos, {len(destinos)} destinos, '

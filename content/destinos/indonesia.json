@@ -4,7 +4,7 @@
   "regiao": "asia",
   "ordem": 7,
   "status": "mencao",
-  "foto": "fotos/destinos/indonesia.webp",
+  "foto": "assets/img/indonesia.webp",
   "mapa": {
     "d": "Bali, Java e Flores, com vulcões no meio do caminho.",
     "f": [

@@ -1,8 +1,13 @@
-# Painel de conteúdo do site (Pages CMS). Teste de 03/11/2026: o mesmo
-# contrato do CMS (content/*.json) editado direto no repositório.
+# O painel da Babi (Pages CMS, app.pagescms.org). Ele edita os arquivos de
+# content/ direto no repositório: cada salvamento vira um commit, e o workflow
+# .github/workflows/publicar.yml monta e publica o site. Contrato com o build
+# em docs/painel-de-conteudo.md.
+#
+# As opções de Destino e Formato dos depoimentos são fixas: destino ou formato
+# novo entra também aqui.
 media:
-  input: content/fotos
-  output: fotos
+  input: assets/img
+  output: assets/img
   categories: [image]
 
 content:
@@ -19,7 +24,7 @@ content:
         description: "Só números, com 55 e o DDD. Ex.: 5511999999999"
         pattern:
           regex: "^[0-9]{12,13}$"
-          message: "Só números, com 55 e o DDD"
+          message: Só números, com 55 e o DDD
       - name: email
         label: E-mail
         type: string
@@ -44,12 +49,24 @@ content:
         type: string
         description: "Ex.: https://umaviagembarbara.com.br"
 
+  # Os três formatos têm seção própria na página Como viajar: aqui se edita,
+  # não se cria nem se apaga.
   - name: formatos
     label: Formatos
-    type: file
-    path: content/servicos.json
+    type: collection
+    path: content/servicos
     format: json
-    list: true
+    filename: "{fields.slug}.json"
+    operations:
+      create: false
+      rename: false
+      delete: false
+    view:
+      fields: [nome, preco, ordem]
+      primary: nome
+      default:
+        sort: ordem
+        order: asc
     fields:
       - name: slug
         label: Endereço na página
@@ -81,18 +98,21 @@ content:
         type: text
         description: O texto que já vem escrito quando a pessoa toca no botão do formato.
 
-  # Um arquivo por destino: a lista do painel mostra nome, região e ordem, e
-  # a Babi acha a Tailândia sem abrir os 16. O build junta a pasta.
+  # Um arquivo por destino, para a lista mostrar os nomes. Apagar fica com a
+  # Kapybara: destino com página própria tem página no build.
   - name: destinos
     label: Destinos
     type: collection
     path: content/destinos
     format: json
     filename: "{fields.slug}.json"
+    operations:
+      rename: false
+      delete: false
     view:
-      fields: [nome, regiao, status, ordem]
+      fields: [nome, ordem]
       primary: nome
-      sort: [ordem, nome]
+      search: [nome]
       default:
         sort: ordem
         order: asc
@@ -140,9 +160,12 @@ content:
       - name: foto
         label: Foto
         type: image
-        description: A foto do destino. Só foto sua.
+        description: A foto do destino. Só foto sua. Pode ser do celular, o site reduz.
         options:
-          path: content/fotos/destinos
+          path: assets/img
+          extensions: [jpg, jpeg, png, webp]
+      # No mapa, a Babi edita a frase e os selos; forma e posição do país
+      # ficam escondidas e voltam intactas a cada salvamento.
       - name: mapa
         label: No mapa da Home
         type: object
@@ -152,9 +175,10 @@ content:
             type: text
             description: A frase que aparece quando a pessoa toca no país.
           - name: f
-            label: Etiquetas de formato no mapa
+            label: Selos de formato no mapa
             type: string
             list: true
+            description: Os formatos que aparecem no país.
           - name: id
             type: string
             hidden: true
@@ -174,12 +198,22 @@ content:
             type: text
             hidden: true
 
+  # Um arquivo por relato. Apagar é permitido: quem retira o ok sai do site
+  # na hora.
   - name: depoimentos
     label: Depoimentos
-    type: file
-    path: content/depoimentos.json
+    type: collection
+    path: content/depoimentos
     format: json
-    list: true
+    filename: "{fields.codigo}.json"
+    operations:
+      rename: false
+    view:
+      fields: [codigo, autor]
+      primary: autor
+      default:
+        sort: codigo
+        order: asc
     fields:
       - name: codigo
         label: Código
@@ -263,9 +297,11 @@ content:
       - name: foto
         label: Foto
         type: image
+        description: Só com o ok da pessoa para a foto também. Pode ser do celular, o site reduz.
         options:
-          path: content/fotos/depoimentos
+          path: assets/img
+          extensions: [jpg, jpeg, png, webp]
       - name: ok_publicacao
         label: A pessoa autorizou publicar?
         type: boolean
-        description: Marque só com o ok dela. Sem isso, o relato não vai ao ar.
+        description: Marque só com o ok dela. Sem isso, o relato não vai ao site.

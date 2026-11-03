@@ -4,7 +4,7 @@
   "regiao": "asia",
   "ordem": 2,
   "status": "mencao",
-  "foto": "fotos/destinos/japao.webp",
+  "foto": "assets/img/japao.webp",
   "mapa": {
     "d": "Templos, folhas vermelhas e trens que chegam no segundo exato.",
     "f": [

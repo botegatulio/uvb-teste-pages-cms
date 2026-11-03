@@ -4,7 +4,7 @@
   "regiao": "asia",
   "ordem": 5,
   "status": "mencao",
-  "foto": "fotos/destinos/vietna.webp",
+  "foto": "assets/img/vietna.webp",
   "mapa": {
     "d": "Do delta do Mekong ao verde impossível de Ninh Bình.",
     "f": [

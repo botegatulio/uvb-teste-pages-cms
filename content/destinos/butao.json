@@ -4,7 +4,7 @@
   "regiao": "asia",
   "ordem": 9,
   "status": "mencao",
-  "foto": "fotos/destinos/butao.webp",
+  "foto": "assets/img/butao.webp",
   "mapa": {
     "d": "O reino que mede felicidade em vez de PIB. Com o Ninho do Tigre incluso.",
     "f": [

@@ -4,7 +4,7 @@
   "regiao": "asia",
   "ordem": 10,
   "status": "mencao",
-  "foto": "fotos/destinos/nepal.webp",
+  "foto": "assets/img/nepal.webp",
   "mapa": {
     "d": "Kathmandu, bandeirinhas de oração e o Himalaia mais perto do que você imagina.",
     "f": [

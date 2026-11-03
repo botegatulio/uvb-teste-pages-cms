@@ -4,7 +4,7 @@
   "regiao": "asia",
   "ordem": 1,
   "status": "mencao",
-  "foto": "fotos/destinos/china.webp",
+  "foto": "assets/img/china.webp",
   "mapa": {
     "d": "A Muralha, Pequim imperial e os vilarejos que ninguém posta. (teste do painel)",
     "f": [
