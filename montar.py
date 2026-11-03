@@ -17,6 +17,15 @@ SAIDA = os.path.join(RAIZ, '_site')
 
 
 def ler(nome):
+    """content/<nome>.json, ou a pasta content/<nome>/ com um arquivo por item."""
+    pasta = os.path.join(RAIZ, 'content', nome)
+    if os.path.isdir(pasta):
+        itens = []
+        for arquivo in sorted(os.listdir(pasta)):
+            if arquivo.endswith('.json'):
+                with open(os.path.join(pasta, arquivo), encoding='utf-8') as f:
+                    itens.append(json.load(f))
+        return itens
     with open(os.path.join(RAIZ, 'content', f'{nome}.json'), encoding='utf-8') as f:
         return json.load(f)
 

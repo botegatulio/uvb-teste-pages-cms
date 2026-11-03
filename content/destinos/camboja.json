@@ -1,0 +1,20 @@
+{
+  "nome": "Camboja",
+  "slug": "camboja",
+  "regiao": "asia",
+  "ordem": 6,
+  "status": "mencao",
+  "foto": "fotos/destinos/camboja.webp",
+  "mapa": {
+    "d": "Angkor ao nascer do sol, quando o templo ainda é só seu.",
+    "f": [
+      "360",
+      "pacote"
+    ],
+    "id": "camboja",
+    "n": "Camboja",
+    "x": 480.2,
+    "y": 519.9,
+    "shape": "M451.7,525.7L448.7,510.4L456.6,499.8L472.6,497.4L484.2,499.2L494.4,504.2L500.0,495.4L510.9,500.1L513.8,508.6L512.2,523.8L491.5,533.5L496.9,541.1L483.9,542.0L473.3,547.1L462.9,545.2L457.9,538.7Z"
+  }
+}

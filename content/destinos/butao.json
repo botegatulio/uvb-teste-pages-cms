@@ -1,0 +1,19 @@
+{
+  "nome": "Butão",
+  "slug": "butao",
+  "regiao": "asia",
+  "ordem": 9,
+  "status": "mencao",
+  "foto": "fotos/destinos/butao.webp",
+  "mapa": {
+    "d": "O reino que mede felicidade em vez de PIB. Com o Ninho do Tigre incluso.",
+    "f": [
+      "pacote"
+    ],
+    "id": "butao",
+    "n": "Butão",
+    "x": 303.9,
+    "y": 324.4,
+    "shape": "M317.3,320.1L322.3,324.6L321.4,333.1L300.9,332.6L293.1,334.8L281.9,329.5L281.7,326.7L289.8,316.3L296.5,312.8L305.3,316.0L311.8,316.4Z"
+  }
+}

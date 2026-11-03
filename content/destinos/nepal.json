@@ -1,0 +1,19 @@
+{
+  "nome": "Nepal",
+  "slug": "nepal",
+  "regiao": "asia",
+  "ordem": 10,
+  "status": "mencao",
+  "foto": "fotos/destinos/nepal.webp",
+  "mapa": {
+    "d": "Kathmandu, bandeirinhas de oração e o Himalaia mais perto do que você imagina.",
+    "f": [
+      "pacote"
+    ],
+    "id": "nepal",
+    "n": "Nepal",
+    "x": 229.1,
+    "y": 313.9,
+    "shape": "M273.1,318.7L272.2,324.7L273.8,333.5L272.3,339.0L262.1,339.2L237.7,334.7L230.6,327.6L213.6,325.8L173.9,305.8L178.7,292.6L191.7,282.7L201.6,287.1L214.0,296.4L221.0,298.4L225.1,305.2L234.7,307.9L244.7,314.1L258.7,317.3Z"
+  }
+}

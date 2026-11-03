@@ -1,0 +1,18 @@
+{
+  "nome": "Singapura",
+  "slug": "singapura",
+  "regiao": "asia",
+  "ordem": 8,
+  "status": "mencao",
+  "foto": "fotos/destinos/singapura.webp",
+  "mapa": {
+    "d": "Uma cidade-jardim inteira em 48 horas muito bem gastas.",
+    "f": [
+      "360"
+    ],
+    "id": "singapura",
+    "n": "Singapura",
+    "x": 467.3,
+    "y": 661.3
+  }
+}

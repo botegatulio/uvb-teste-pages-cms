@@ -1,0 +1,19 @@
+{
+  "nome": "Sri Lanka",
+  "slug": "sri-lanka",
+  "regiao": "extra",
+  "ordem": 14,
+  "status": "mencao",
+  "foto": "fotos/destinos/sri-lanka.webp",
+  "mapa": {
+    "d": "O trem entre plantações de chá que vale a viagem sozinho.",
+    "f": [
+      "360"
+    ],
+    "id": "srilanka",
+    "n": "Sri Lanka",
+    "x": 183.5,
+    "y": 582.8,
+    "shape": "M194.9,584.1L193.0,597.1L187.9,600.6L177.1,603.4L171.3,593.6L169.1,575.7L174.7,555.4L183.2,562.3L189.0,571.1Z"
+  }
+}

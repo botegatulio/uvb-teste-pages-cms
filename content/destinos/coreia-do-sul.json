@@ -1,0 +1,19 @@
+{
+  "nome": "Coreia do Sul",
+  "slug": "coreia-do-sul",
+  "regiao": "asia",
+  "ordem": 3,
+  "status": "mencao",
+  "foto": "fotos/destinos/coreia-do-sul.webp",
+  "mapa": {
+    "d": "Palácios, hanbok e provavelmente o outono mais bonito da Ásia.",
+    "f": [
+      "360"
+    ],
+    "id": "coreia",
+    "n": "Coreia do Sul",
+    "x": 758.9,
+    "y": 189.1,
+    "shape": "M742.9,173.3L743.7,171.9L749.2,172.4L754.0,165.4L768.0,163.6L769.8,159.8L780.4,178.2L783.4,188.3L783.6,205.9L778.9,214.2L767.7,217.1L757.8,223.3L746.7,224.6L745.4,216.5L747.6,205.1L742.2,189.2L751.4,186.6Z"
+  }
+}

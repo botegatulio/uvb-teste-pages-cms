@@ -81,12 +81,21 @@ content:
         type: text
         description: O texto que já vem escrito quando a pessoa toca no botão do formato.
 
+  # Um arquivo por destino: a lista do painel mostra nome, região e ordem, e
+  # a Babi acha a Tailândia sem abrir os 16. O build junta a pasta.
   - name: destinos
     label: Destinos
-    type: file
-    path: content/destinos.json
+    type: collection
+    path: content/destinos
     format: json
-    list: true
+    filename: "{fields.slug}.json"
+    view:
+      fields: [nome, regiao, status, ordem]
+      primary: nome
+      sort: [ordem, nome]
+      default:
+        sort: ordem
+        order: asc
     fields:
       - name: nome
         label: Nome do destino

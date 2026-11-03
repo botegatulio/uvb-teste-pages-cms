@@ -1,0 +1,18 @@
+{
+  "nome": "Maldivas",
+  "slug": "maldivas",
+  "regiao": "extra",
+  "ordem": 15,
+  "status": "mencao",
+  "foto": "fotos/destinos/maldivas.webp",
+  "mapa": {
+    "d": "Onde a viagem finalmente para. E era esse o plano.",
+    "f": [
+      "360"
+    ],
+    "id": "maldivas",
+    "n": "Maldivas",
+    "x": 90.1,
+    "y": 629.1
+  }
+}
