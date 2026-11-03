@@ -1,0 +1,271 @@
+# Painel de conteúdo do site (Pages CMS). Teste de 03/11/2026: o mesmo
+# contrato do CMS (content/*.json) editado direto no repositório.
+media:
+  input: content/fotos
+  output: fotos
+  categories: [image]
+
+content:
+  - name: site
+    label: Site
+    type: file
+    path: content/site.json
+    format: json
+    fields:
+      - name: whatsapp
+        label: WhatsApp
+        type: string
+        required: true
+        description: "Só números, com 55 e o DDD. Ex.: 5511999999999"
+        pattern:
+          regex: "^[0-9]{12,13}$"
+          message: "Só números, com 55 e o DDD"
+      - name: email
+        label: E-mail
+        type: string
+        description: O e-mail de atendimento que aparece nas páginas.
+      - name: instagram
+        label: Instagram
+        type: string
+        description: Só o nome do perfil, sem o @.
+      - name: cnpj
+        label: CNPJ
+        type: string
+      - name: cadastur
+        label: Cadastur
+        type: string
+        description: O número do cadastro no Ministério do Turismo.
+      - name: cadastur_titular
+        label: Titular do Cadastur
+        type: string
+        description: Em nome de quem está o Cadastur.
+      - name: dominio
+        label: Domínio do site
+        type: string
+        description: "Ex.: https://umaviagembarbara.com.br"
+
+  - name: formatos
+    label: Formatos
+    type: file
+    path: content/servicos.json
+    format: json
+    list:
+      collapsible:
+        collapsed: true
+        summary: "{nome}"
+    fields:
+      - name: slug
+        label: Endereço na página
+        type: string
+        readonly: true
+        description: É o que liga o formato à seção dele na página Como viajar.
+      - name: nome
+        label: Nome do formato
+        type: string
+        required: true
+      - name: ordem
+        label: Ordem
+        type: number
+        description: 1 aparece primeiro.
+      - name: frase
+        label: Pergunta curta
+        type: string
+        description: "A pergunta da lista do resumo. Ex.: Quer que a gente cuide de tudo?"
+      - name: preco
+        label: Preço (linha curta)
+        type: string
+        description: "Ex.: R$ 250 por dia de roteiro, até 2 pessoas"
+      - name: legenda
+        label: Explicação do preço
+        type: text
+        description: O texto mais longo que aparece na seção do formato.
+      - name: mensagem_whatsapp
+        label: Mensagem pronta do WhatsApp
+        type: text
+        description: O texto que já vem escrito quando a pessoa toca no botão do formato.
+
+  - name: destinos
+    label: Destinos
+    type: file
+    path: content/destinos.json
+    format: json
+    list:
+      collapsible:
+        collapsed: true
+        summary: "{nome}"
+    fields:
+      - name: nome
+        label: Nome do destino
+        type: string
+        required: true
+      - name: slug
+        label: Endereço
+        type: string
+        required: true
+        description: Só letras minúsculas, números e hífen. Não mude depois de publicado.
+        pattern:
+          regex: "^[a-z0-9-]+$"
+          message: Só letras minúsculas, números e hífen
+      - name: regiao
+        label: Região
+        type: select
+        description: "Ásia: os 11 destinos principais. Extras: os que vêm depois na lista."
+        options:
+          values:
+            - name: asia
+              label: Ásia
+            - name: extra
+              label: Extras
+      - name: ordem
+        label: Ordem
+        type: number
+        description: 1 aparece primeiro.
+      - name: status
+        label: Presença no site
+        type: select
+        description: Com página própria, preencha também o Arquivo da página.
+        options:
+          values:
+            - name: pagina
+              label: Tem página própria
+            - name: mencao
+              label: Só no mapa e na lista
+      - name: pagina
+        label: Arquivo da página
+        type: string
+        description: "Só para quem tem página própria. Ex.: tailandia.html"
+      - name: foto
+        label: Foto
+        type: image
+        description: A foto do destino. Só foto sua.
+        options:
+          path: content/fotos/destinos
+      - name: mapa
+        label: No mapa da Home
+        type: object
+        fields:
+          - name: d
+            label: Frase do mapa
+            type: text
+            description: A frase que aparece quando a pessoa toca no país.
+          - name: f
+            label: Etiquetas de formato no mapa
+            type: string
+            list: true
+          - name: id
+            type: string
+            hidden: true
+          - name: n
+            type: string
+            hidden: true
+          - name: page
+            type: string
+            hidden: true
+          - name: x
+            type: number
+            hidden: true
+          - name: y
+            type: number
+            hidden: true
+          - name: shape
+            type: text
+            hidden: true
+
+  - name: depoimentos
+    label: Depoimentos
+    type: file
+    path: content/depoimentos.json
+    format: json
+    list:
+      collapsible:
+        collapsed: true
+        summary: "{codigo}: {autor}"
+    fields:
+      - name: codigo
+        label: Código
+        type: string
+        required: true
+        description: R1, R2, R3...
+      - name: autor
+        label: Quem viajou
+        type: string
+        required: true
+        description: "Como o nome aparece no site. Ex.: Maria L."
+      - name: texto
+        label: Relato inteiro
+        type: text
+        required: true
+        description: Exatamente como a pessoa escreveu.
+      - name: trechos
+        label: Trechos usados nas páginas
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{tema}"
+        fields:
+          - name: tema
+            label: Tema
+            type: string
+            description: "Uma palavra curta do que a página mostra. Ex.: confianca"
+          - name: texto
+            label: Trecho
+            type: text
+            description: O recorte exato do relato, sem reescrever.
+      - name: destino
+        label: Destino da viagem
+        type: select
+        options:
+          values:
+            - name: "china"
+              label: "China"
+            - name: "japao"
+              label: "Japão"
+            - name: "coreia-do-sul"
+              label: "Coreia do Sul"
+            - name: "tailandia"
+              label: "Tailândia"
+            - name: "vietna"
+              label: "Vietnã"
+            - name: "camboja"
+              label: "Camboja"
+            - name: "indonesia"
+              label: "Indonésia"
+            - name: "singapura"
+              label: "Singapura"
+            - name: "butao"
+              label: "Butão"
+            - name: "nepal"
+              label: "Nepal"
+            - name: "india"
+              label: "Índia"
+            - name: "filipinas"
+              label: "Filipinas"
+            - name: "laos"
+              label: "Laos"
+            - name: "sri-lanka"
+              label: "Sri Lanka"
+            - name: "maldivas"
+              label: "Maldivas"
+            - name: "malasia"
+              label: "Malásia"
+      - name: formato
+        label: Formato da viagem
+        type: select
+        options:
+          values:
+            - name: "viagem-completa"
+              label: "Viagem Completa"
+            - name: "curadoria"
+              label: "Curadoria de Roteiro"
+            - name: "consultoria"
+              label: "Consultoria"
+      - name: foto
+        label: Foto
+        type: image
+        options:
+          path: content/fotos/depoimentos
+      - name: ok_publicacao
+        label: A pessoa autorizou publicar?
+        type: boolean
+        description: Marque só com o ok dela. Sem isso, o relato não vai ao ar.

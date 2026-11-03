@@ -1,0 +1,27 @@
+[
+  {
+    "codigo": "T1",
+    "autor": "Pessoa de Teste A.",
+    "texto": "Relato fictício, só para testar o painel. A viagem foi ótima e tudo deu certo.",
+    "trechos": [
+      {
+        "tema": "confianca",
+        "texto": "tudo deu certo"
+      }
+    ],
+    "destino": "tailandia",
+    "formato": "curadoria",
+    "foto": null,
+    "ok_publicacao": true
+  },
+  {
+    "codigo": "T2",
+    "autor": "Pessoa de Teste B.",
+    "texto": "Outro relato fictício, ainda sem autorização para publicar.",
+    "trechos": [],
+    "destino": "vietna",
+    "formato": "viagem-completa",
+    "foto": null,
+    "ok_publicacao": false
+  }
+]
