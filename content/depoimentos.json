@@ -11,17 +11,15 @@
     ],
     "destino": "tailandia",
     "formato": "curadoria",
-    "foto": null,
+    "foto": "fotos/depoimentos/foto-celular-teste.jpg",
     "ok_publicacao": true
   },
   {
     "codigo": "T2",
     "autor": "Pessoa de Teste B.",
     "texto": "Outro relato fictício, ainda sem autorização para publicar.",
-    "trechos": [],
     "destino": "vietna",
     "formato": "viagem-completa",
-    "foto": null,
     "ok_publicacao": false
   }
 ]
